@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <title>WAHYU STORE — Game & Produk Digital</title>
+  <meta name="description" content="WAHYU STORE — layanan game dan produk digital. Pesan dengan mudah melalui WhatsApp.">
+  <style>
+    :root{
+      --bg:#080d19;--panel:#111a2b;--panel2:#0d1524;--line:#1c2b43;
+      --blue:#168cff;--blue2:#45b5ff;--text:#f4f8ff;--muted:#9aabc2;
+      --green:#22c875;--radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 50% -20%,#123d70 0,transparent 42%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:#080d19eF;backdrop-filter:blur(14px);border-bottom:1px solid #17243a}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.4px}
+    .logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#48bdff,#0755c9);display:grid;place-items:center;box-shadow:0 8px 24px #0879ef55;font-size:22px;font-weight:950}
+    .brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:1.5px;margin-top:2px}
+    .navlinks{display:flex;gap:24px;color:#b7c5d8;font-size:14px}
+    .navlinks a:hover{color:white}
+    .pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #2864a0;background:#0d2440;color:#d9efff;padding:11px 16px;border-radius:999px;font-weight:750;font-size:13px}
+    .hero{padding:54px 0 34px}
+    .hero-box{position:relative;overflow:hidden;border:1px solid #20538b;border-radius:28px;background:linear-gradient(115deg,#0c2341 0%,#0d3970 55%,#07172d 100%);padding:clamp(26px,6vw,58px);min-height:300px;display:flex;align-items:center}
+    .hero-box:after{content:"";position:absolute;width:340px;height:340px;right:-65px;top:-80px;border-radius:50%;background:radial-gradient(circle,#36aaff55,transparent 68%);pointer-events:none}
+    .hero-copy{position:relative;z-index:1;max-width:650px}
+    .eyebrow{color:#73c8ff;font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
+    h1{font-size:clamp(34px,6vw,60px);line-height:1.03;margin:14px 0}
+    h1 span{color:#55baff}
+    .hero p{color:#c2d2e7;line-height:1.7;max-width:520px;margin:0 0 22px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border:0;border-radius:13px;padding:13px 18px;background:linear-gradient(135deg,#27a5ff,#1267e7);color:white;font-weight:850;cursor:pointer;box-shadow:0 8px 24px #0879ef33}
+    .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+    .btn.secondary{background:#14243a;border:1px solid #2a405e;box-shadow:none;color:#eaf4ff}
+    .hero-mark{position:absolute;right:6%;bottom:0;font-size:clamp(90px,18vw,190px);font-weight:1000;color:#d7efff12;letter-spacing:-12px;user-select:none}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .stat{background:#101a2b;border:1px solid var(--line);padding:17px;border-radius:16px}
+    .stat strong{display:block;font-size:18px}.stat span{color:var(--muted);font-size:12px}
+    section{padding:30px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}
+    h2{font-size:25px;margin:0 0 6px}.sub{color:var(--muted);font-size:14px;margin:0}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+    .filter{border:1px solid var(--line);background:#101a2b;color:#b8c8dc;border-radius:999px;padding:9px 14px;cursor:pointer;font-size:13px}
+    .filter.active{background:#0c3b70;border-color:#168cff;color:white}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .product{background:linear-gradient(180deg,#121d30,#0d1524);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+    .product:hover{transform:translateY(-3px);border-color:#2869a7}
+    .product-art{height:145px;display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,#1a6cb3,#10233d 62%,#0b1422);font-size:55px}
+    .product-body{padding:16px}
+    .tag{display:inline-block;background:#102c4a;color:#80caff;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.5px}
+    .product h3{font-size:17px;margin:11px 0 6px}
+    .product p{font-size:12px;color:var(--muted);line-height:1.5;min-height:36px;margin:0 0 13px}
+    .product-foot{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .price{font-weight:900;color:#70c6ff;font-size:16px}
+    .buy{border:0;background:#116fd0;color:white;border-radius:10px;padding:9px 12px;font-weight:800;font-size:12px;cursor:pointer}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .info{padding:20px;border-radius:18px;border:1px solid var(--line);background:#101a2b}
+    .info .ico{font-size:24px}.info h3{font-size:15px;margin:10px 0 6px}.info p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
+    .contact{background:linear-gradient(110deg,#0d2b4e,#0e1b2e);border:1px solid #1c568a;border-radius:22px;padding:25px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .contact h2{margin-bottom:7px}.contact p{color:#b7cbe1;margin:0;font-size:13px;line-height:1.5}
+    footer{padding:30px 0 100px;color:#71839c;font-size:12px;text-align:center}
+    .bottom{display:none}
+    .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#12243a;border:1px solid #31577e;padding:11px 16px;border-radius:12px;font-size:13px;display:none;z-index:50}
+    @media(max-width:760px){
+      .navlinks{display:none}.nav{height:64px}.hero{padding-top:24px}.hero-box{min-height:330px}.hero-mark{right:2%;bottom:8px}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-art{height:115px}.product-body{padding:12px}.product h3{font-size:14px}.product p{font-size:11px}
+      .stats{gap:8px}.stat{padding:12px}.stat strong{font-size:15px}.stat span{font-size:10px}
+      .info-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}
+      .bottom{position:fixed;bottom:0;left:0;right:0;z-index:30;display:flex;justify-content:space-around;background:#09111feF;backdrop-filter:blur(12px);border-top:1px solid #1a2b43;padding:10px 5px calc(10px + env(safe-area-inset-bottom));}
+      .bottom a{display:grid;gap:3px;justify-items:center;color:#9fb0c7;font-size:10px}.bottom b{font-size:19px;color:#56baff}
+      footer{padding-bottom:95px}
+    }
+    @media(max-width:390px){.grid{grid-template-columns:1fr 1fr}.product-art{height:95px}.buy{padding:8px}.price{font-size:14px}}
+  </style>
+</head>
+<body>
+  <!-- GANTI NOMOR WHATSAPP DAN DAFTAR PRODUK DI BAGIAN SCRIPT PALING BAWAH -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home"><span class="logo">W</span><span>WAHYU STORE<small>GAME & DIGITAL SERVICE</small></span></a>
+      <nav class="navlinks"><a href="#home">Home</a><a href="#produk">Produk</a><a href="#layanan">Layanan</a><a href="#kontak">Kontak</a></nav>
+      <a class="pill" id="topOrder" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div class="hero-box">
+          <div class="hero-copy">
+            <div class="eyebrow">Fast • Easy • Trusted</div>
+            <h1>WELCOME TO<br><span>WAHYU STORE</span></h1>
+            <p>Pusat layanan game dan produk digital. Pilih layanan yang kamu butuhkan, lalu pesan dengan mudah melalui WhatsApp.</p>
+            <div class="actions"><a class="btn" href="#produk">Lihat Produk</a><a class="btn secondary" id="heroOrder" href="#" target="_blank" rel="noopener">Hubungi Admin</a></div>
+          </div>
+          <div class="hero-mark">W</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>Game</strong><span>Layanan berbagai game</span></div>
+          <div class="stat"><strong>Digital</strong><span>Produk digital pilihan</span></div>
+          <div class="stat"><strong>WhatsApp</strong><span>Pemesanan mudah</span></div>
+        </div>
+      </section>
+
+      <section id="produk">
+        <div class="section-head"><div><h2>Produk & Layanan</h2><p class="sub">Pilih produk untuk melihat detail pemesanan.</p></div></div>
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="Semua">Semua</button>
+          <button class="filter" data-filter="Joki">Joki</button>
+          <button class="filter" data-filter="Digital">Produk Digital</button>
+          <button class="filter" data-filter="Lainnya">Lainnya</button>
+        </div>
+        <div class="grid" id="productGrid"></div>
+      </section>
+
+      <section id="layanan">
+        <div class="section-head"><div><h2>Kenapa WAHYU STORE?</h2><p class="sub">Informasi layanan sebelum melakukan pemesanan.</p></div></div>
+        <div class="info-grid">
+          <article class="info"><div class="ico">⚡</div><h3>Respon Praktis</h3><p>Hubungi admin melalui WhatsApp untuk menanyakan detail produk dan ketersediaan layanan.</p></article>
+          <article class="info"><div class="ico">🛡️</div><h3>Informasi Jelas</h3><p>Pastikan harga, proses, dan ketentuan layanan sudah disepakati sebelum transaksi.</p></article>
+          <article class="info"><div class="ico">💬</div><h3>Bantuan Admin</h3><p>Admin membantu menjawab pertanyaan dan mengarahkan proses pemesanan.</p></article>
+        </div>
+      </section>
+
+      <section id="kontak">
+        <div class="contact">
+          <div><h2>Butuh bantuan?</h2><p>Hubungi WAHYU STORE melalui WhatsApp untuk bertanya atau melakukan pemesanan.</p>
+            <p style="margin-top:10px">Nomor WhatsApp: <a id="displayPhone" href="#" target="_blank" rel="noopener" style="color:#70c6ff;font-weight:850;text-decoration:underline">https://wa.me/62895-3821-12429</a></p>
+          </div>
+          <a class="btn" id="contactOrder" href="#" target="_blank" rel="noopener">Chat WhatsApp ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer><div class="wrap">© <span id="year"></span> WAHYU STORE. All rights reserved.<br>Pastikan detail pesanan sudah benar sebelum melakukan pembayaran.</div></footer>
+  <nav class="bottom"><a href="#home"><b>⌂</b>Home</a><a href="#produk"><b>▦</b>Produk</a><a href="#layanan"><b>✦</b>Layanan</a><a href="#kontak"><b>☏</b>Kontak</a></nav>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ========================= PENGATURAN TOKO =========================
+    // Format nomor WhatsApp: kode negara + nomor, tanpa +, spasi, atau strip.
+    const WHATSAPP_NUMBER = "6289538212429";
+
+    // Ubah nama, kategori, harga, deskripsi, dan ikon produk sesuai daganganmu.
+    // Harga contoh di bawah ini perlu kamu sesuaikan sebelum website dipublikasikan.
+    const PRODUCTS = [
+      {name:"Joki Mobile Legends",category:"Joki",price:"Hubungi admin",description:"Layanan joki Mobile Legends. Tanyakan detail dan ketentuan terlebih dahulu.",icon:"🎮"},
+      {name:"Joki Roblox",category:"Joki",price:"Hubungi admin",description:"Layanan bantuan game Roblox. Detail layanan melalui WhatsApp.",icon:"🕹️"},
+      {name:"Top Up Game",category:"Digital",price:"Sesuai nominal",description:"Tanyakan pilihan nominal dan ketersediaan sebelum memesan.",icon:"💎"},
+      {name:"Produk Digital",category:"Digital",price:"Hubungi admin",description:"Pilihan produk digital. Hubungi admin untuk informasi produk.",icon:"📦"},
+      {name:"Jasa Desain / Logo",category:"Lainnya",price:"Hubungi admin",description:"Jasa desain sesuai kebutuhan. Kirim referensi saat menghubungi admin.",icon:"🎨"},
+      {name:"Jasa Post",category:"Lainnya",price:"Hubungi admin",description:"Tanyakan ketentuan dan jadwal jasa post melalui WhatsApp.",icon:"📣"}
+    ];
+    // ==================================================================
+
+    const waLink = (message) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const defaultMessage = "Halo WAHYU STORE, saya ingin bertanya tentang produk dan layanan.";
+    ["topOrder","heroOrder","contactOrder"].forEach(id => document.getElementById(id).href = waLink(defaultMessage));
+    // Nomor yang terlihat juga bisa ditekan customer untuk langsung membuka WhatsApp.
+    const displayPhone = document.getElementById("displayPhone");
+    displayPhone.href = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+    const grid = document.getElementById("productGrid");
+    function renderProducts(filter="Semua"){
+      grid.innerHTML = "";
+      const visible = PRODUCTS.filter(p => filter === "Semua" || p.category === filter);
+      visible.forEach(p => {
+        const card = document.createElement("article");
+        card.className = "product";
+        const art = document.createElement("div"); art.className = "product-art"; art.textContent = p.icon;
+        const body = document.createElement("div"); body.className = "product-body";
+        const tag = document.createElement("span"); tag.className = "tag"; tag.textContent = p.category;
+        const title = document.createElement("h3"); title.textContent = p.name;
+        const desc = document.createElement("p"); desc.textContent = p.description;
+        const foot = document.createElement("div"); foot.className = "product-foot";
+        const price = document.createElement("span"); price.className = "price"; price.textContent = p.price;
+        const buy = document.createElement("button"); buy.className = "buy"; buy.textContent = "Pesan ↗";
+        buy.addEventListener("click", () => window.open(waLink(`Halo WAHYU STORE, saya ingin memesan/bertanya tentang:\nProduk: ${p.name}\nKategori: ${p.category}\nHarga: ${p.price}`), "_blank", "noopener"));
+        foot.append(price,buy); body.append(tag,title,desc,foot); card.append(art,body); grid.append(card);
+      });
+    }
+    document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+      button.classList.add("active"); renderProducts(button.dataset.filter);
+    }));
+    renderProducts();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
